@@ -5,8 +5,6 @@ import {
   ViewStyle
 } from 'react-native'
 
-import React from 'react'
-
 export interface ICenterOn {
   x: number
   y: number
@@ -15,6 +13,7 @@ export interface ICenterOn {
 }
 
 export enum OnMoveTypes {
+  empty,
   onPanResponderRelease,
   centerOn,
   initValue,
@@ -41,7 +40,7 @@ export interface IInitialValues {
   positionX: number
   positionY: number
   scale: number
-  type: string
+  type: OnMoveTypes
   zoomCurrentDistance: number
 }
 
@@ -50,11 +49,11 @@ export class ImageZoomProps {
     positionX: 0,
     positionY: 0,
     scale: 1,
-    type: '',
+    type: OnMoveTypes.empty,
     zoomCurrentDistance: 0
   }
 
-  public frame: React.FC = () => {}
+  public frame: Element = () => {}
   public cropWidth: number = 100
   public cropHeight: number = 100
   public imageWidth: number = 100
