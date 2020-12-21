@@ -117,9 +117,6 @@ export class ImageZoomProps {
     //
   }
 
-  /**
-   * 长按的回调
-   */
   public onLongPress?: (eventParams: IOnClick) => void = () => {
     //
   }
